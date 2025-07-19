@@ -1,0 +1,7 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  zip_file_path: data/lung_cancer.zip
+  unzip_dir: artifacts/data_ingestion
+

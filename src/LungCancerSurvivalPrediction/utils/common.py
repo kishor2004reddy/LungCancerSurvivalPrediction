@@ -2,8 +2,8 @@ import os
 import yaml
 import json
 from ensure import ensure_annotations
-from typing import Any, List
-from LungCancerSurvivalPrediction.logger import logger
+from typing import Any
+from LungCancerSurvivalPrediction import logger
 from pathlib import Path
 from box import ConfigBox
 from box.exceptions import BoxValueError
@@ -34,7 +34,7 @@ def read_yaml(path: Path) -> ConfigBox:
         raise e
 
 @ensure_annotations
-def create_directories(paths: List[Path], verbose = True) -> None:
+def create_directories(paths: list, verbose = True):
     """
     Creates directories if they do not exist.
 

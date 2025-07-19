@@ -1,1 +1,7 @@
-[2025-07-19 14:28:35,209] - INFO:  Logging has been set up successfully.
+[2025-07-19 22:03:16,638] - INFO:  >>>>>> stage Data Ingestion Stage started <<<<<<
+[2025-07-19 22:03:16,667] - INFO:  YAML file config\config.yaml loaded successfully.
+[2025-07-19 22:03:16,679] - INFO:  YAML file schema.yaml loaded successfully.
+[2025-07-19 22:03:16,720] - INFO:  YAML file params.yaml loaded successfully.
+[2025-07-19 22:03:16,740] - INFO:  Created directory: artifacts\data_ingestion
+[2025-07-19 22:03:18,001] - INFO:  Data unzipped to artifacts\data_ingestion
+[2025-07-19 22:03:18,003] - INFO:  >>>>>> stage Data Ingestion Stage completed <<<<<<
