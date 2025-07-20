@@ -1,20 +1,20 @@
 Columns:
-  id:                    int64
-  age:                   float64
-  gender:                 object
-  country:                object
-  diagnosis_date:         object
-  cancer_stage:           object
-  family_history:         object
-  smoking_status:         object
-  bmi:                   float64
-  cholesterol_level:       int64
-  hypertension:            int64
-  asthma:                  int64
-  cirrhosis:               int64
-  other_cancer:            int64
-  treatment_type:         object
-  end_treatment_date:     object
+  id: int64
+  age: float64
+  gender: object
+  country: object
+  diagnosis_date: object
+  cancer_stage: object
+  family_history: object
+  smoking_status: object
+  bmi: float64
+  cholesterol_level: int64
+  hypertension: int64
+  asthma: int64
+  cirrhosis: int64
+  other_cancer: int64
+  treatment_type: object
+  end_treatment_date: object
 
 Target_Column:
-  survived:                 int64
+  survived: int64

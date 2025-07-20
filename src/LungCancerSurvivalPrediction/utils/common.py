@@ -8,6 +8,7 @@ from pathlib import Path
 from box import ConfigBox
 from box.exceptions import BoxValueError
 import joblib
+from typing import Dict
 
 
 @ensure_annotations
@@ -33,6 +34,23 @@ def read_yaml(path: Path) -> ConfigBox:
         logger.error(f"Error reading YAML file {path}: {e}")
         raise e
 
+
+def write_yaml(path: Path, data: Dict) -> None:
+    """
+    Writes a dictionary to a YAML file.
+
+    Args:
+        path (Path): The path to the YAML file.
+        data (dict): The data to write to the YAML file.
+    """
+    try:
+        with open(path, "w") as yaml_file:
+            yaml.safe_dump(data, yaml_file)
+            logger.info(f"YAML file saved at {path}")
+    except Exception as e:
+        logger.error(f"Error writing to yaml file {path}: {e}")
+        raise e
+                     
 @ensure_annotations
 def create_directories(paths: list, verbose = True):
     """

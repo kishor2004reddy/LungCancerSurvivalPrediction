@@ -1,6 +1,6 @@
 from LungCancerSurvivalPrediction.constants import *
 from LungCancerSurvivalPrediction.utils.common import read_yaml, create_directories
-from LungCancerSurvivalPrediction.entity.config_entity import DataIngestionConfig
+from LungCancerSurvivalPrediction.entity.config_entity import DataIngestionConfig, DataValidationConfig
 
 class ConfigurationManager:
     def __init__(
@@ -25,3 +25,17 @@ class ConfigurationManager:
             unzip_dir=Path(unzip_dir)
         )
         return data_ingestion_config
+    
+    def get_data_validation_config(self) -> DataValidationConfig:
+        
+        config = self.config.data_validation
+
+        create_directories([config.root_dir], verbose=True)
+
+        data_validation_config = DataValidationConfig(
+            root_dir=Path(config.root_dir),
+            unzip_data_path=Path(config.unzip_data_path),
+            schema_file_path=Path(config.schema_file_path),
+            report_file_path=Path(config.report_file_path)
+        )
+        return data_validation_config
