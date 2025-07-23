@@ -1,17 +1,28 @@
-[2025-07-20 17:10:50,038] - INFO:  NumExpr defaulting to 4 threads.
-[2025-07-20 17:10:50,856] - INFO:  >>>>>> stage Data Ingestion Stage started <<<<<<
-[2025-07-20 17:10:50,861] - INFO:  YAML file config\config.yaml loaded successfully.
-[2025-07-20 17:10:50,870] - INFO:  YAML file schema.yaml loaded successfully.
-[2025-07-20 17:10:50,874] - INFO:  YAML file params.yaml loaded successfully.
-[2025-07-20 17:10:50,905] - INFO:  Created directory: artifacts\data_ingestion
-[2025-07-20 17:10:51,849] - INFO:  Data unzipped to artifacts\data_ingestion
-[2025-07-20 17:10:51,851] - INFO:  >>>>>> stage Data Ingestion Stage completed <<<<<<
-[2025-07-20 17:10:51,852] - INFO:  >>>>>> stage Data Validation Stage started <<<<<<
-[2025-07-20 17:10:51,857] - INFO:  YAML file config\config.yaml loaded successfully.
-[2025-07-20 17:10:51,863] - INFO:  YAML file schema.yaml loaded successfully.
-[2025-07-20 17:10:51,870] - INFO:  YAML file params.yaml loaded successfully.
-[2025-07-20 17:10:51,874] - INFO:  Created directory: artifacts/data_validation
-[2025-07-20 17:10:51,889] - INFO:  YAML file schema.yaml loaded successfully.
-[2025-07-20 17:10:55,939] - INFO:  YAML file saved at artifacts\data_validation\report.yaml
-[2025-07-20 17:10:55,940] - INFO:  Data validation passed.
-[2025-07-20 17:10:56,009] - INFO:  >>>>>> stage Data Validation Stage completed <<<<<<
+[2025-07-23 07:40:15,741] - INFO:  >>>>>> stage Data Ingestion Stage started <<<<<<
+[2025-07-23 07:40:15,748] - INFO:  YAML file config\config.yaml loaded successfully.
+[2025-07-23 07:40:15,761] - INFO:  YAML file schema.yaml loaded successfully.
+[2025-07-23 07:40:15,764] - INFO:  YAML file params.yaml loaded successfully.
+[2025-07-23 07:40:15,766] - INFO:  Created directory: artifacts\data_ingestion
+[2025-07-23 07:40:15,842] - INFO:  Data unzipped to artifacts\data_ingestion
+[2025-07-23 07:40:15,844] - INFO:  >>>>>> stage Data Ingestion Stage completed <<<<<<
+[2025-07-23 07:40:15,844] - INFO:  >>>>>> stage Data Validation Stage started <<<<<<
+[2025-07-23 07:40:15,851] - INFO:  YAML file config\config.yaml loaded successfully.
+[2025-07-23 07:40:15,856] - INFO:  YAML file schema.yaml loaded successfully.
+[2025-07-23 07:40:15,858] - INFO:  YAML file params.yaml loaded successfully.
+[2025-07-23 07:40:15,860] - INFO:  Created directory: artifacts/data_validation
+[2025-07-23 07:40:15,867] - INFO:  YAML file schema.yaml loaded successfully.
+[2025-07-23 07:40:16,054] - INFO:  YAML file saved at artifacts\data_validation\report.yaml
+[2025-07-23 07:40:16,054] - INFO:  Data validation passed.
+[2025-07-23 07:40:16,058] - INFO:  >>>>>> stage Data Validation Stage completed <<<<<<
+[2025-07-23 07:40:16,062] - INFO:  YAML file artifacts\data_validation\report.yaml loaded successfully.
+[2025-07-23 07:40:16,064] - INFO:  >>>>>> stage Data Transformation Stage started <<<<<<
+[2025-07-23 07:40:16,070] - INFO:  YAML file config\config.yaml loaded successfully.
+[2025-07-23 07:40:16,079] - INFO:  YAML file schema.yaml loaded successfully.
+[2025-07-23 07:40:16,084] - INFO:  YAML file params.yaml loaded successfully.
+[2025-07-23 07:40:16,087] - INFO:  Created directory: artifacts/data_transformation
+[2025-07-23 07:40:16,311] - INFO:  Dropped 2500 duplicate rows
+[2025-07-23 07:40:16,339] - INFO:  Data cleaned
+[2025-07-23 07:40:16,413] - INFO:  Data scaled for features: ['Episode_Length_minutes', 'Host_Popularity_percentage', 'Guest_Popularity_percentage', 'Number_of_Ads', 'Listening_Time_minutes', 'Host_Guest_Combo_Popularity', 'Ads_per_Minute', 'Host_to_Guest_Popularity_Ratio', 'Popularity_Difference', 'Length_x_Host_Popularity', 'Length_x_Guest_Popularity', 'Ad_Density_Popularity']
+[2025-07-23 07:40:17,040] - INFO:  Data encoded for features: ['Podcast_Name', 'Episode_Title', 'Genre', 'Publication_Day', 'Publication_Time', 'Episode_Sentiment']
+[2025-07-23 07:40:19,667] - INFO:  Data split into train and test sets with shapes: (35894, 19), (8974, 19)
+[2025-07-23 07:40:19,671] - INFO:  >>>>>> stage Data Transformation Stage completed <<<<<<

@@ -5,9 +5,9 @@ with open("README.md", "r") as f:
 
 __version__ = "0.0.0"
 
-REPO_NAME = "Lung Cancer Survival Prediction"
+REPO_NAME = "Podcast Listening Time Prediction"
 AUTHOR_USER_NAME = "Kishor"
-SRC_REPO = "LungCancerSurvivalPrediction"
+SRC_REPO = "PodcastListeningTimePrediction"
 
 
 setuptools.setup(
@@ -17,7 +17,7 @@ setuptools.setup(
     author_email = "kishor04reddy@gmail.com",
     long_description=description,
     long_description_content_type="text/markdown",
-    url =  "https://github.com/kishor2004reddy/LungCancerSurvivalPrediction.git",
+    url =  "https://github.com/kishor2004reddy/PodcastListeningTimePrediction.git",
     package_dir={"": "src"},
     packages = setuptools.find_packages(where = "src")
 )

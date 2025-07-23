@@ -1,20 +1,14 @@
 Columns:
-  id: int64
-  age: float64
-  gender: object
-  country: object
-  diagnosis_date: object
-  cancer_stage: object
-  family_history: object
-  smoking_status: object
-  bmi: float64
-  cholesterol_level: int64
-  hypertension: int64
-  asthma: int64
-  cirrhosis: int64
-  other_cancer: int64
-  treatment_type: object
-  end_treatment_date: object
-
+  Podcast_Name: object
+  Episode_Title: object
+  Episode_Length_minutes: float64
+  Genre: object
+  Host_Popularity_percentage: float64
+  Publication_Day: object
+  Publication_Time: object
+  Guest_Popularity_percentage: float64
+  Number_of_Ads: int64
+  Episode_Sentiment: object
+  
 Target_Column:
-  survived: int64
+  Listening_Time_minutes: float64

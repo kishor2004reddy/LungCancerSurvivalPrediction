@@ -2,11 +2,15 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  zip_file_path: data/lung_cancer.zip
+  zip_file_path: data/PodcastTime.zip
   unzip_dir: artifacts/data_ingestion
 
 data_validation:
   root_dir: artifacts/data_validation
-  unzip_data_path: artifacts\data_ingestion\Lung Cancer\dataset_med.csv
+  unzip_data_path: artifacts\data_ingestion\podcast_dataset.csv
   schema_file_path: schema.yaml
   report_file_path: artifacts/data_validation/report.yaml
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/podcast_dataset.csv

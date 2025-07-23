@@ -10,6 +10,8 @@ tqdm
 ensure
 joblib
 types-pyYAML
+target_encoder
 FLask
 Flask-Cors
+tensorflow
 -e .
