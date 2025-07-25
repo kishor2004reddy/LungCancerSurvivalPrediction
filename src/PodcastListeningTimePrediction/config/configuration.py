@@ -66,3 +66,18 @@ class ConfigurationManager:
             target_column=list(self.schema.Target_Column.keys())[0]
         )
         return model_training_config
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+
+        create_directories([config.root_dir], verbose=True)
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=Path(config.root_dir),
+            test_data_path=Path(config.test_data_path),
+            model_path=config.model_path,
+            metric_file_path=Path(config.metric_file_path),
+            target_column=list(self.schema.Target_Column.keys())[0]
+        )
+        return model_evaluation_config
+    
