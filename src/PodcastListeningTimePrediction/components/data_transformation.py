@@ -72,6 +72,9 @@ class DataTransformation:
         scaler = StandardScaler()
         numerical_features = self.dataframe.select_dtypes(include=['float64', 'int64']).columns.tolist()
         
+        if "Listening_Time_minutes" in numerical_features:
+            numerical_features.remove("Listening_Time_minutes")
+        
         self.dataframe[numerical_features] = scaler.fit_transform(self.dataframe[numerical_features])
         
         logger.info(f"Data scaled for features: {numerical_features}")

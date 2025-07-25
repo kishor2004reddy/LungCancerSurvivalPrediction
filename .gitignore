@@ -1,3 +1,4 @@
 __pycache__/
 .ipynb_checkpoints/
 PodcastListeningTimePrediction.egg-info/
+catboost_info/

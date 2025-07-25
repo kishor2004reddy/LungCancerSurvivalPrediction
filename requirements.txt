@@ -1,17 +1,21 @@
 pandas
-mlflow
+mlflow==2.13.0
 notebook
 numpy
-scikit-learn
+scikit-learn==1.4.2
 matplotlib
+seaborn
 python-box
 pyYAML
 tqdm
 ensure
 joblib
 types-pyYAML
-target_encoder
+category_encoders
+xgboost==2.0.3
 FLask
 Flask-Cors
-tensorflow
+tensorflow==2.18.0
+keras-tuner==1.4.6
+catboost==1.2.5
 -e .

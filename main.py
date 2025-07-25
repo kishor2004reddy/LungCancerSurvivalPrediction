@@ -2,6 +2,7 @@ from PodcastListeningTimePrediction import logger
 from PodcastListeningTimePrediction.pipeline.data_ingestion_pipeline import DataIngestionPipeline
 from PodcastListeningTimePrediction.pipeline.data_validation_pipeline import DataValidationPipeline
 from PodcastListeningTimePrediction.pipeline.data_transformation_pipeline import DataTransformationPipeline
+from PodcastListeningTimePrediction.pipeline.model_trainer_pipeline import ModelTrainerPipeline
 from PodcastListeningTimePrediction.utils.common import read_yaml
 from pathlib import Path
 
@@ -36,6 +37,17 @@ try:
     logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
     data_validation_pipeline = DataTransformationPipeline()
     data_validation_pipeline.main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<")
+except Exception as e:
+    logger.exception(f">>>>>> stage {STAGE_NAME} failed <<<<<< : {e}")
+    raise e
+
+STAGE_NAME = "Model Training Stage"
+
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    model_train_pipeline = ModelTrainerPipeline()
+    model_train_pipeline.main()
     logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<")
 except Exception as e:
     logger.exception(f">>>>>> stage {STAGE_NAME} failed <<<<<< : {e}")

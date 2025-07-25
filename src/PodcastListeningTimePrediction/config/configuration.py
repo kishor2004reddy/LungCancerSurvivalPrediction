@@ -28,6 +28,8 @@ class ConfigurationManager:
     def get_data_validation_config(self) -> DataValidationConfig:
         
         config = self.config.data_validation
+        
+
 
         create_directories([config.root_dir], verbose=True)
 
@@ -50,3 +52,17 @@ class ConfigurationManager:
             data_path=Path(config.data_path)
         )
         return data_transformation_config
+    
+    def get_model_training_config(self) -> ModelTrainingConfig:
+        config = self.config.model_training
+
+        create_directories([config.root_dir], verbose=True)
+
+        model_training_config = ModelTrainingConfig(
+            root_dir=Path(config.root_dir),
+            train_data_path=Path(config.train_data_path),
+            test_data_path=Path(config.test_data_path),
+            model_path=config.model_path,
+            target_column=list(self.schema.Target_Column.keys())[0]
+        )
+        return model_training_config
