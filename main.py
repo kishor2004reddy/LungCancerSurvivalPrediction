@@ -4,6 +4,7 @@ from PodcastListeningTimePrediction.pipeline.data_validation_pipeline import Dat
 from PodcastListeningTimePrediction.pipeline.data_transformation_pipeline import DataTransformationPipeline
 from PodcastListeningTimePrediction.pipeline.model_trainer_pipeline import ModelTrainerPipeline
 from PodcastListeningTimePrediction.pipeline.model_evaluation_pipeline import ModelEvaluationPipeline
+from PodcastListeningTimePrediction.pipeline.prediction_pipeline import PredictionPipeline
 from PodcastListeningTimePrediction.utils.common import read_yaml
 from pathlib import Path
 
@@ -64,3 +65,5 @@ try:
 except Exception as e:
     logger.exception(f">>>>>> stage {STAGE_NAME} failed <<<<<< : {e}")
     raise e
+
+

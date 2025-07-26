@@ -12,7 +12,4 @@ class DataTransformationPipeline:
         data_transformation = DataTransformation(config=data_transformation_config)
         data_transformation.drop_duplicates()
         data_transformation.clean_data()
-        data_transformation.create_features()
-        data_transformation.scale_data()
-        data_transformation.encode_data()
         data_transformation.split_data()

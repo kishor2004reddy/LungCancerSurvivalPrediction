@@ -63,6 +63,7 @@ class ConfigurationManager:
             train_data_path=Path(config.train_data_path),
             test_data_path=Path(config.test_data_path),
             model_path=config.model_path,
+            preprocessor_path=config.preprocessor_path,
             target_column=list(self.schema.Target_Column.keys())[0]
         )
         return model_training_config
@@ -77,7 +78,8 @@ class ConfigurationManager:
             test_data_path=Path(config.test_data_path),
             model_path=config.model_path,
             metric_file_path=Path(config.metric_file_path),
+            preprocessor_path=config.preprocessor_path,
             target_column=list(self.schema.Target_Column.keys())[0]
         )
         return model_evaluation_config
-    
+

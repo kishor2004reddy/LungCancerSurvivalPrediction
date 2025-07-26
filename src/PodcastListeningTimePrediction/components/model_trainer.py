@@ -1,6 +1,8 @@
 from PodcastListeningTimePrediction import logger
 from PodcastListeningTimePrediction.entity.config_entity import ModelTrainingConfig
 import pandas as pd
+import joblib
+from PodcastListeningTimePrediction.components.preprocessor import PodcastPreprocessor
 
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Input
@@ -17,10 +19,18 @@ class ModelTraining:
         train = pd.read_csv(self.config.train_data_path)
         test = pd.read_csv(self.config.test_data_path)
 
-        X_train = train.drop(columns=[self.config.target_column])
+        # Fit preprocessor on training data and save
+        preprocessor = PodcastPreprocessor()
+        preprocessor.fit(train)
+        joblib.dump(preprocessor, self.config.preprocessor_path)
+
+        # Transform train and test data
+        X_train = preprocessor.transform(train).drop(columns=[self.config.target_column])
         y_train = train[self.config.target_column]
-        X_test = test.drop(columns=[self.config.target_column])
+        X_test = preprocessor.transform(test).drop(columns=[self.config.target_column])
         y_test = test[self.config.target_column]
+
+        
 
         model = Sequential([
             Input(shape=(X_train.shape[1],)),
@@ -35,7 +45,7 @@ class ModelTraining:
         logger.info(f"Model Summary: {model.summary()}")
 
         # Compile the model
-        optimizer = Adam(learning_rate = 0.01)
+        optimizer = Adam(learning_rate = 0.05)
 
         model.compile(
             optimizer=optimizer,
@@ -58,7 +68,6 @@ class ModelTraining:
         logger.info(f"Training History: {history.history}")
         model.save(self.config.model_path)
 
-        
 
 
-    
+

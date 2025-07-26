@@ -1,0 +1,1 @@
+[2025-07-25 21:16:46,372] - ERROR:  Error reading YAML file config\config.yaml: [Errno 2] No such file or directory: 'config\\config.yaml'

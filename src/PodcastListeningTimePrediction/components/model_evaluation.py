@@ -2,21 +2,25 @@ from PodcastListeningTimePrediction import logger
 from PodcastListeningTimePrediction.entity.config_entity import ModelEvaluationConfig
 import pandas as pd
 from tensorflow.keras.models import load_model
+import joblib
+from PodcastListeningTimePrediction.components.preprocessor import PodcastPreprocessor
 
 class ModelEvaluation:
     def __init__(self, config: ModelEvaluationConfig):
         self.config = config
 
     def evaluate_model(self):
-        
-        """Evaluate the trained model on the test dataset and save metrics."""
-
         # Load the model
         model = load_model(self.config.model_path)
 
+        # Load the preprocessor
+        preprocessor = joblib.load(self.config.preprocessor_path)
+
         # Load the test data
         test_data = pd.read_csv(self.config.test_data_path)
-        X_test = test_data.drop(columns=[self.config.target_column])
+        # Preprocess test data
+        processed_test = preprocessor.transform(test_data)
+        X_test = processed_test.drop(columns=[self.config.target_column])
         y_test = test_data[self.config.target_column]
 
         # Evaluate the model

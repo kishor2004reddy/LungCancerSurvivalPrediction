@@ -25,6 +25,7 @@ class ModelTrainingConfig:
     train_data_path: Path
     test_data_path: Path
     model_path: Path
+    preprocessor_path: Path
     target_column: str
 
 @dataclass(frozen=True)
@@ -33,6 +34,7 @@ class ModelEvaluationConfig:
     test_data_path: Path
     model_path: Path
     metric_file_path: Path
+    preprocessor_path: Path
     target_column: str
 
 
