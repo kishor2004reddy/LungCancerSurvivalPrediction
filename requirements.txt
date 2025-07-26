@@ -1,7 +1,6 @@
 pandas
 mlflow==2.13.0
 notebook
-numpy==2.0.0
 scikit-learn==1.4.2
 matplotlib
 seaborn
